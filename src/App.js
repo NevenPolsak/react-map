@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Employee from './Employee'
+
+
+const employeeInfo = [
+  {
+      id:"1",
+      name:"Jack",
+      lastname:"Bower",
+      age:"69"
+  },
+  {
+      id:"2",
+      name:"Marry",
+      lastname:"Kerry",
+      age:"96"
+  }
+
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Employess</h1>
+            {employeeInfo.map((employee) => {
+            return <Employee  key={employee.id} name={employee.name} lastname={employee.lastname} age={employee.age} />
+            }
+           )}
     </div>
   );
 }
